@@ -2,6 +2,23 @@
 
 Aplikasi web untuk mengelola data universitas dengan fitur CRUD (Create, Read, Update, Delete) lengkap.
 
+## 📷 Dokumentasi Aplikasi
+
+### Dashboard
+![Dashboard](dokumentasi/dashboard.png)
+
+### Data Fakultas
+![Data Fakultas](dokumentasi/data fakultas.png)
+
+### Tambah Data
+![Tambah Data](dokumentasi/tambah data fakultas.png)
+
+### Edit Data
+![Edit Data](dokumentasi/edit data fakultas.png)
+
+### Hapus Data
+![Hapus Data](dokumentasi/alert hapus data fakultas.png)
+
 ## 📋 Fitur
 
 ### Master Data
@@ -40,7 +57,6 @@ Aplikasi web untuk mengelola data universitas dengan fitur CRUD (Create, Read, U
 universitas-crud/
 ├── backend/
 │   ├── api.php           # API endpoint utama
-│   ├── config.php         # Konfigurasi database
 │   └── db_universitas.sql # File database
 ├── frontend/
 │   ├── index.html         # Halaman utama
@@ -72,15 +88,20 @@ b. Import file SQL:
 mysql -u root -p db_universitas < backend/db_universitas.sql
 ```
 
-### 3. Konfigurasi Backend
+### 3. Konfigurasi Backend (php-crud-api)
 
-Edit file `backend/config.php` sesuaikan dengan konfigurasi database Anda:
+Edit file `backend/api.php` sesuaikan dengan konfigurasi database Anda:
 
 ```php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'db_universitas');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+ $config = new Config([
+    'driver' => 'mysql',
+    'address' => 'localhost',
+    'port' => '3306',
+    'username' => 'root',
+    'password' => '',
+    'database' => 'db_universitas',
+    // 'debug' => false
+]);
 ```
 
 ### 4. Setup Web Server
@@ -166,81 +187,3 @@ Content-Type: application/json
   "angkatan": 2022
 }
 ```
-
-## 🎨 Customization
-
-### Menambah Tabel Baru
-
-1. Tambahkan tabel di database
-2. Update array `$allowed_tables` di `backend/api.php`
-3. Tambahkan konfigurasi tabel di `frontend/assets/js/main.js`:
-
-```javascript
-tableConfigs.nama_tabel = {
-    title: 'Judul Tabel',
-    icon: 'bi-icon-name',
-    columns: ['Kolom1', 'Kolom2', ...],
-    fields: ['field1', 'field2', ...]
-};
-```
-
-4. Tambahkan menu di `frontend/index.html`
-
-### Styling
-
-- Edit `frontend/assets/css/style.css` untuk custom styling
-- Bootstrap classes dapat digunakan langsung
-
-## 🔒 Security Notes
-
-⚠️ **Penting untuk Production:**
-
-1. Tambahkan authentication dan authorization
-2. Implementasi HTTPS
-3. Validasi input lebih ketat
-4. Prepared statements sudah digunakan untuk mencegah SQL injection
-5. Tambahkan rate limiting
-6. Gunakan password hashing untuk user_akademik
-7. Implementasi CSRF protection
-
-## 📝 Database Schema
-
-Database terdiri dari 10 tabel dengan relasi:
-- Fakultas → Jurusan (1:N)
-- Jurusan → Dosen (1:N)
-- Jurusan → Mahasiswa (1:N)
-- Jurusan → Mata Kuliah (1:N)
-- Dosen + Mata Kuliah → Kelas
-- Kelas → Jadwal (1:N)
-- Mahasiswa + Mata Kuliah → Nilai
-- Mahasiswa → Pembayaran (1:N)
-
-## 🐛 Troubleshooting
-
-### CORS Error
-Pastikan header CORS sudah diset di `config.php`
-
-### Database Connection Error
-- Cek kredensial database di `config.php`
-- Pastikan MySQL service berjalan
-- Cek nama database sudah benar
-
-### 404 Not Found
-- Pastikan path URL benar
-- Cek `.htaccess` jika menggunakan Apache
-
-## 📄 License
-
-MIT License - Free to use for educational purposes
-
-## 👨‍💻 Author
-
-Developed for Sistem Informasi Universitas
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first.
-
-## 📞 Support
-
-Untuk bantuan dan pertanyaan, silakan buat issue di repository ini.

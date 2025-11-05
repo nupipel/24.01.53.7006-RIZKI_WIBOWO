@@ -123,7 +123,7 @@ async function loadDashboard() {
                         <div class="row align-items-center">
                             <div class="col">
                                 <div class="stat-label">Fakultas</div>
-                                <div class="stat-number">${stats[0].results || 0}</div>
+                                <div class="stat-number">${stats[0].records.length || 0}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="bi bi-building fs-1 text-primary"></i>
@@ -139,7 +139,7 @@ async function loadDashboard() {
                         <div class="row align-items-center">
                             <div class="col">
                                 <div class="stat-label">Jurusan</div>
-                                <div class="stat-number">${stats[1].results || 0}</div>
+                                <div class="stat-number">${stats[1].records.length || 0}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="bi bi-diagram-3 fs-1 text-success"></i>
@@ -155,7 +155,7 @@ async function loadDashboard() {
                         <div class="row align-items-center">
                             <div class="col">
                                 <div class="stat-label">Dosen</div>
-                                <div class="stat-number">${stats[2].results || 0}</div>
+                                <div class="stat-number">${stats[2].records.length || 0}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="bi bi-person-badge fs-1 text-info"></i>
@@ -171,7 +171,7 @@ async function loadDashboard() {
                         <div class="row align-items-center">
                             <div class="col">
                                 <div class="stat-label">Mahasiswa</div>
-                                <div class="stat-number">${stats[3].results || 0}</div>
+                                <div class="stat-number">${stats[3].records.length || 0}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="bi bi-people fs-1 text-warning"></i>

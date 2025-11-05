@@ -8,16 +8,16 @@ Aplikasi web untuk mengelola data universitas dengan fitur CRUD (Create, Read, U
 ![Dashboard](dokumentasi/dashboard.png)
 
 ### Data Fakultas
-![Data Fakultas](dokumentasi/data fakultas.png)
+![Data Fakultas](dokumentasi/data_fakultas.png)
 
 ### Tambah Data
-![Tambah Data](dokumentasi/tambah data fakultas.png)
+![Tambah Data](dokumentasi/tambah_data_fakultas.png)
 
 ### Edit Data
-![Edit Data](dokumentasi/edit data fakultas.png)
+![Edit Data](dokumentasi/edit_data_fakultas.png)
 
 ### Hapus Data
-![Hapus Data](dokumentasi/alert hapus data fakultas.png)
+![Hapus Data](dokumentasi/alert_hapus_data_fakultas.png)
 
 ## 📋 Fitur
 
